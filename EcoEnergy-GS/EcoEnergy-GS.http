@@ -1,0 +1,6 @@
+@EcoEnergy_GS_HostAddress = http://localhost:5101
+
+GET {{EcoEnergy_GS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
