@@ -14,5 +14,6 @@ namespace EcoEnergy_GS.Models
         [ForeignKey("Residencia")]
         [Column("Id_residencia")]
         public int Id_residencia { get; set; }
+        public ResidenciaModel Residencia { get; set; }
     }
 }
