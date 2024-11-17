@@ -14,8 +14,9 @@ namespace EcoEnergy_GS.Models
         public string Nome { get; set; }
 
         [Required]
-        public int quantidade { get; set; }
+        public int Quantidade { get; set; }
 
+        [InverseProperty("TipoEletrodomestico")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
     }
 }
