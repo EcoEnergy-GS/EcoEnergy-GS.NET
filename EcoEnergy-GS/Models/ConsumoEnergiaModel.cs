@@ -8,7 +8,7 @@ namespace EcoEnergy_GS.Models
     {
         [Key]
         public int Id_consumo { get; set; }
-        public DateTime Data {  get; set; }
+        public DateTime Data { get; set; }
         public int Consumo { get; set; }
 
         [ForeignKey("Residencia")]

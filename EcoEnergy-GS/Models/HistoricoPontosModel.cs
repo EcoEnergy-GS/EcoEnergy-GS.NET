@@ -7,8 +7,8 @@ namespace EcoEnergy_GS.Models
     public class HistoricoPontosModel
     {
         [Key]
-        public int Id_historico {  get; set; }
-        public DateTime Data { get ; set; }
+        public int Id_historico { get; set; }
+        public DateTime Data { get; set; }
         public int Quantidade { get; set; }
 
         [ForeignKey("Usuario")]

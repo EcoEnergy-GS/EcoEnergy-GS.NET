@@ -10,7 +10,7 @@ namespace EcoEnergy_GS.Models
         public int Id_endereco { get; set; }
 
         [Required]
-        public string Cep {  get; set; }
+        public string Cep { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 8, ErrorMessage = "Nome da rua deve ter no máximo 50 caracteres.")]

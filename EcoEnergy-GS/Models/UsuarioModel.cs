@@ -11,7 +11,7 @@ namespace EcoEnergy_GS.Models
         private string _nome;
 
         [Key]
-        public int Id_usuario {  get; set; }
+        public int Id_usuario { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "O nome pode ter no máximo 50 caracteres.")]
@@ -34,7 +34,7 @@ namespace EcoEnergy_GS.Models
         public int Pontos { get; set; }
 
         [InverseProperty("Usuario")]
-        public ICollection<HistoricoPontosModel> HistoricoPontos {  get; set; }
+        public ICollection<HistoricoPontosModel> HistoricoPontos { get; set; }
 
         [InverseProperty("Usuario")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
