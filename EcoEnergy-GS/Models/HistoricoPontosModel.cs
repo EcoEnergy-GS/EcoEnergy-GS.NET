@@ -9,10 +9,11 @@ namespace EcoEnergy_GS.Models
         [Key]
         public int Id_historico {  get; set; }
         public DateTime Data { get ; set; }
-        public int quantidade { get; set; }
+        public int Quantidade { get; set; }
 
-        [ForeignKey("Usuarios")]
+        [ForeignKey("Usuario")]
         [Column("Id_usuario")]
         public int Id_usuario { get; set; }
+        public UsuarioModel Usuario { get; set; }
     }
 }
