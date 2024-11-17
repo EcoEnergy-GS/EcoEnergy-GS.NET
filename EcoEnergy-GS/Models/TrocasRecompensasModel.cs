@@ -11,12 +11,14 @@ namespace EcoEnergy_GS.Models
         public DateTime DataTroca { get; set; }
         public int Pontos_utilizados { get; set; }
 
-        [ForeignKey("Usuarios")]
+        [ForeignKey("Usuario")]
         [Column("Id_usuario")]
         public int Id_usuario { get; set; }
+        public UsuarioModel Usuario { get; set; }
 
         [ForeignKey("Recompensas")]
         [Column("Id_recompensas")]
         public int Id_recompensas { get; set; }
+        public RecompensasModel Recompensas { get; set; }
     }
 }
