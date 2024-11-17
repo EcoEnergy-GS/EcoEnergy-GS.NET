@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
@@ -19,18 +20,23 @@ namespace EcoEnergy_GS.Models
         [Required]
         public Double Media_consumo { get; set; }
 
-        [ForeignKey("Usuarios")]
+        [ForeignKey("Usuario")]
         [Column("Id_usuario")]
         public int Id_usuario { get; set; }
+        public UsuarioModel Usuario { get; set; }
 
-        [ForeignKey("Tipo_Eletrodomestico")]
+        [ForeignKey("TipoEletrodomestico")]
         [Column("Id_eletrodomestico")]
         public int Id_eletrodomestico { get; set; }
+        public TipoEletrodomesticoModel TipoEletrodomestico { get; set; }
 
         [ForeignKey("Endereco")]
         [Column("Id_endereco")]
         public int Id_endereco { get; set; }
+        public EnderecoModel Endereco { get; set; }
 
+        [JsonIgnore]
+        [InverseProperty("Residencia")]
         public ICollection<ConsumoEnergiaModel> ConsumoEnergia { get; set; }
     }
 }
