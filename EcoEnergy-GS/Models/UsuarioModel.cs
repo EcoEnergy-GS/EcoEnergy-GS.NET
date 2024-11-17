@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Usuarios")]
+    [Table("Usuario")]
     public class UsuarioModel
     {
         private string _nome;
@@ -33,8 +33,13 @@ namespace EcoEnergy_GS.Models
         [Required]
         public int Pontos { get; set; }
 
+        [InverseProperty("Usuario")]
         public ICollection<HistoricoPontosModel> HistoricoPontos {  get; set; }
+
+        [InverseProperty("Usuario")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
+
+        [InverseProperty("Usuario")]
         public ICollection<TrocasRecompensasModel> Trocas { get; set; }
     }
 }
