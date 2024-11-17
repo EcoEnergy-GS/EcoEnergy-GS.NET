@@ -21,6 +21,8 @@ namespace EcoEnergy_GS.Models
 
         [StringLength(50, MinimumLength = 8, ErrorMessage = "O complemento deve ter no máximo 50 caracteres.")]
         public string Complemento { get; set; }
+
+        [InverseProperty("Endereco")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
     }
 }
