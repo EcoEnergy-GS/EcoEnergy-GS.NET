@@ -3,24 +3,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Endereco")]
+    [Table("ENDERECO")]
     public class EnderecoModel
     {
         [Key]
-        public int Id_endereco { get; set; }
+        [Column("ID_ENDERECO")]
+        public int id_endereco { get; set; }
 
         [Required]
-        public string Cep { get; set; }
+        [Column("CEP")]
+        public string cep { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 8, ErrorMessage = "Nome da rua deve ter no máximo 50 caracteres.")]
-        public string Rua { get; set; }
+        [Column("RUA")]
+        public string rua { get; set; }
 
         [Required]
-        public int Numero { get; set; }
+        [Column("NUMERO")]
+        public int numero { get; set; }
 
         [StringLength(50, MinimumLength = 8, ErrorMessage = "O complemento deve ter no máximo 50 caracteres.")]
-        public string Complemento { get; set; }
+        [Column("COMPLEMENTO")]
+        public string complemento { get; set; }
 
         [InverseProperty("Endereco")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
