@@ -3,18 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Tipo_Eletrodomestico")]
+    [Table("TIPO_ELETRODOMESTICO")]
     public class TipoEletrodomesticoModel
     {
         [Key]
-        public int Id_eletrodomestico { get; set; }
+        [Column("ID_ELETRODOMESTICO")]
+        public int id_eletrodomestico { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 8, ErrorMessage = "O dispositivo deve ter no máximo 50 caracteres.")]
-        public string Nome { get; set; }
+        [Column("NOME_ELETRODOMESTICO")]
+        public string nome_eletrodomestico { get; set; }
 
         [Required]
-        public int Quantidade { get; set; }
+        [Column("QUANTIDADE")]
+        public int quantidade { get; set; }
 
         [InverseProperty("TipoEletrodomestico")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
