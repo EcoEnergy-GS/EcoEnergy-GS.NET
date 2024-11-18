@@ -4,35 +4,39 @@ using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Residencia")]
+    [Table("RESIDENCIA")]
     public class ResidenciaModel
     {
         [Key]
-        public int Id_residencia { get; set; }
+        [Column("ID_RESIDENCIA")]
+        public int id_residencia { get; set; }
 
         [StringLength(50, MinimumLength = 8, ErrorMessage = "O dispositivo deve ter no máximo 50 caracteres.")]
         [Required]
-        public string Dispotivico_monitoramento { get; set; }
+        [Column("DISPOSITIVO_MONITORAMENTO")]
+        public string dispotivico_monitoramento { get; set; }
 
         [Required]
-        public int Quantidade_pessoas { get; set; }
+        [Column("QUANTIDADE_PESSOAS")]
+        public int quantidade_pessoas { get; set; }
 
         [Required]
-        public Double Media_consumo { get; set; }
+        [Column("MEDIA_CONSUMO")]
+        public Double media_consumo { get; set; }
 
         [ForeignKey("Usuario")]
-        [Column("Id_usuario")]
-        public int Id_usuario { get; set; }
+        [Column("ID_USUARIOS")]
+        public int id_usuarios { get; set; }
         public UsuarioModel Usuario { get; set; }
 
         [ForeignKey("TipoEletrodomestico")]
-        [Column("Id_eletrodomestico")]
-        public int Id_eletrodomestico { get; set; }
+        [Column("ID_ELETRODOMESTICO")]
+        public int id_eletrodomestico { get; set; }
         public TipoEletrodomesticoModel TipoEletrodomestico { get; set; }
 
         [ForeignKey("Endereco")]
-        [Column("Id_endereco")]
-        public int Id_endereco { get; set; }
+        [Column("ID_ENDERECO")]
+        public int id_endereco { get; set; }
         public EnderecoModel Endereco { get; set; }
 
         [JsonIgnore]
