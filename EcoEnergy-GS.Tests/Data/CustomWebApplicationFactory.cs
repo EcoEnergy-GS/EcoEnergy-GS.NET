@@ -3,11 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoEnergy_GS.Tests.Data
 {
@@ -18,7 +13,7 @@ namespace EcoEnergy_GS.Tests.Data
             builder.ConfigureServices(services =>
             {
                 var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(DbContextOptions<AppDbContext>));
-                if(descriptor != null)
+                if (descriptor != null)
                 {
                     services.Remove(descriptor);
                 }
@@ -28,9 +23,9 @@ namespace EcoEnergy_GS.Tests.Data
                     options.UseInMemoryDatabase("InMemoryDbForTesting");
                 });
 
-                var sp =services.BuildServiceProvider();
+                var sp = services.BuildServiceProvider();
 
-                using(var scope = sp.CreateScope())
+                using (var scope = sp.CreateScope())
                 {
                     var scopedServices = scope.ServiceProvider;
                     var db = scopedServices.GetRequiredService<AppDbContext>();
