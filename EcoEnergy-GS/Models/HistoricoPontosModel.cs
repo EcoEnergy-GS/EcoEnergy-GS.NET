@@ -3,17 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Historico_Pontos")]
+    [Table("HISTORICO_PONTOS")]
     public class HistoricoPontosModel
     {
         [Key]
-        public int Id_historico { get; set; }
-        public DateTime Data { get; set; }
-        public int Quantidade { get; set; }
+        [Column("ID_HISTORICO")]
+        public int id_historico { get; set; }
+        [Column("DATA_HISTORICO")]
+        public DateTime data_historico { get; set; }
+        [Column("QUANTIDADE")]
+        public int quantidade { get; set; }
 
         [ForeignKey("Usuario")]
-        [Column("Id_usuario")]
-        public int Id_usuario { get; set; }
+        [Column("ID_USUARIOS")]
+        public int id_usuarios { get; set; }
         public UsuarioModel Usuario { get; set; }
     }
 }
