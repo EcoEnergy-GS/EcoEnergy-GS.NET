@@ -5,17 +5,19 @@ using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Usuario")]
+    [Table("USUARIOS")]
     public class UsuarioModel
     {
         private string _nome;
 
         [Key]
-        public int Id_usuario { get; set; }
+        [Column("ID_USUARIOS")]
+        public int id_usuarios { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "O nome pode ter no máximo 50 caracteres.")]
-        public string Nome
+        [Column("NOME")]
+        public string nome
         {
             get => _nome;
             set => _nome = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value?.ToLower());
@@ -26,12 +28,15 @@ namespace EcoEnergy_GS.Models
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
             ErrorMessage = "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.")]
         [JsonIgnore]
-        public string Senha { get; set; }
+        [Column("SENHA")]
+        public string senha { get; set; }
 
-        public string Telefone { get; set; }
+        [Column("TELEFONE")]
+        public string telefone { get; set; }
 
         [Required]
-        public int Pontos { get; set; }
+        [Column("PONTOS")]
+        public int pontos { get; set; }
 
         [InverseProperty("Usuario")]
         public ICollection<HistoricoPontosModel> HistoricoPontos { get; set; }
