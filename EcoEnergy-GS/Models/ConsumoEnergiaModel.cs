@@ -3,17 +3,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcoEnergy_GS.Models
 {
-    [Table("Consumo_Energia")]
+    [Table("CONSUMO_ENERGIA")]
     public class ConsumoEnergiaModel
     {
         [Key]
-        public int Id_consumo { get; set; }
-        public DateTime Data { get; set; }
-        public int Consumo { get; set; }
+        [Column("ID_CONSUMO")]
+        public int id_consumo { get; set; }
+
+        [Column("DATA_CONSUMO")]
+        public DateTime data_consumo { get; set; }
+
+        [Column("CONSUMO")]
+        public int consumo { get; set; }
 
         [ForeignKey("Residencia")]
-        [Column("Id_residencia")]
-        public int Id_residencia { get; set; }
+        [Column("ID_RESIDENCIA")]
+        public int id_residencia { get; set; }
         public ResidenciaModel Residencia { get; set; }
     }
 }
