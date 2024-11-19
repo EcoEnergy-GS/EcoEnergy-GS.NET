@@ -107,7 +107,7 @@ namespace EcoEnergy_GS.Services.Usuarios
                 await _context.SaveChangesAsync();
 
                 resposta.Dados = usuario;
-                resposta.Mensagem = "Usuário criado com sucesso!";
+                resposta.Mensagem = "Usuário deletado com sucesso!";
 
                 return resposta;
             }
