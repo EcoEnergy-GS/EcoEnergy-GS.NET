@@ -46,6 +46,30 @@ namespace EcoEnergy_GS.Tests.Tests
         }
 
         [Fact]
+        public async Task GetUsersById_ReturnUser()
+        {
+            var user = new UsuarioModel
+            {
+                nome = "Gabriel",
+                senha = "Gabriel123@",
+                telefone = "11123456789",
+                pontos = 12
+            };
+
+            _context.Usuarios.Add(user);
+            _context.SaveChanges();
+
+            //Act
+            var response = await _client.GetAsync($"/api/Usuario/BucarUsuarioPorId/{user.id_usuarios}");
+
+            //Assert
+            response.EnsureSuccessStatusCode();
+            var json = await response.Content.ReadFromJsonAsync<ResponseModel<UsuarioModel>>();
+
+            Assert.NotNull(json.Dados);
+        }
+
+        [Fact]
         public async Task GetUserById_ReturnNull_WhenDoesntExist()
         {
             //Arrange
@@ -135,7 +159,7 @@ namespace EcoEnergy_GS.Tests.Tests
         }
 
         [Fact]
-        public async Task EditUser_ReturnsNoContent_WhenUserDoesntExist()
+        public async Task EditUser_ReturnsNoFound_WhenUserDoesntExist()
         {
             //Arrange
             int id_user = 1234;
