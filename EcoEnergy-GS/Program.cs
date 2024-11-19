@@ -1,5 +1,6 @@
 using EcoEnergy_GS.Data;
 using EcoEnergy_GS.Services.HistoricoPontos;
+using EcoEnergy_GS.Services.Recompensas;
 using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ builder.Services.AddSwaggerGen();
 //Injeção de dependencia para os Services
 builder.Services.AddScoped<IUsuarioInterface, UsuarioService>();
 builder.Services.AddScoped<IHistoricoPontosInterface, HistoricoPontosService>();
+builder.Services.AddScoped<IRecompensasInterface, RecompensasService>();
 
 var app = builder.Build();
 
