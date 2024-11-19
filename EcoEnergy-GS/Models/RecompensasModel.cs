@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
@@ -17,6 +18,7 @@ namespace EcoEnergy_GS.Models
         [Column("PONTOS_NECESSARIOS")]
         public int pontos_necessarios { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Recompensas")]
         public ICollection<TrocasRecompensasModel> Trocas { get; set; }
     }

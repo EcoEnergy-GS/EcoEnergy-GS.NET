@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EcoEnergy_GS.Models
 {
@@ -19,6 +20,7 @@ namespace EcoEnergy_GS.Models
         [Column("QUANTIDADE")]
         public int quantidade { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("TipoEletrodomestico")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
     }

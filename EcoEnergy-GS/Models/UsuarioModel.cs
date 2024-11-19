@@ -38,12 +38,15 @@ namespace EcoEnergy_GS.Models
         [Column("PONTOS")]
         public int pontos { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<HistoricoPontosModel> HistoricoPontos { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<TrocasRecompensasModel> Trocas { get; set; }
     }
