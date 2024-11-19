@@ -1,4 +1,5 @@
 ﻿using EcoEnergy_GS.Data;
+using EcoEnergy_GS.DTO.Usuarios;
 using EcoEnergy_GS.Models;
 using EcoEnergy_GS.Tests.Data;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,7 +40,7 @@ namespace EcoEnergy_GS.Tests.Tests
 
             //Assert
             response.EnsureSuccessStatusCode();
-            var json = await response.Content.ReadFromJsonAsync<ResponseModel<UsuarioModel>>();
+            var json = await response.Content.ReadFromJsonAsync<ResponseModel<List<UsuarioModel>>>();
 
             Assert.NotNull(json.Dados);
         }
@@ -64,7 +65,7 @@ namespace EcoEnergy_GS.Tests.Tests
         public async Task CreateUser_ReturnsOKUserAndUser()
         {
             //Arrange
-            var user = new UsuarioModel
+            var user = new UsuarioCreateDto
             {
                 nome = "Gabriel",
                 senha = "Gabriel123@",
@@ -79,30 +80,27 @@ namespace EcoEnergy_GS.Tests.Tests
             response.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
-            var jsonUser = await response.Content.ReadFromJsonAsync<ResponseModel<UsuarioModel>>();
+            var json = await response.Content.ReadFromJsonAsync<ResponseModel<UsuarioModel>>();
 
-            Assert.Equal(user.nome, jsonUser.Dados.nome);
+            Assert.True(json.Status);
+            Assert.NotNull(json.Dados);
+            Assert.Equal(user.nome, json.Dados.nome);
         }
 
         [Fact]
-        public async Task CreateUser_ReturnNull_WhenDoesntCreateUser()
+        public async Task CreateUser_ReturnNull_WhenNotEnoughtData()
         {
             //Arrange
             var user = new UsuarioModel
             {
-                nome = "Gabriel"
+                nome = "Teste"
             };
 
             //Act
             var response = await _client.PostAsJsonAsync("/api/Usuario/CreateUsuario", user);
 
             //Asserts
-            response.EnsureSuccessStatusCode();
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-
-            var jsonUser = await response.Content.ReadFromJsonAsync<ResponseModel<UsuarioModel>>();
-
-            Assert.Null(jsonUser.Dados);
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
 
         [Fact]
@@ -124,7 +122,7 @@ namespace EcoEnergy_GS.Tests.Tests
             {
                 id_usuarios = user.id_usuarios,
                 nome = "Juan",
-                senha = "Juan123@",
+                senha = "Juan12344@",
                 telefone = "11123456888",
                 pontos = 12
             };
