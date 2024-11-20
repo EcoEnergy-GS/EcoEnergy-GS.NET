@@ -253,7 +253,7 @@ namespace EcoEnergy_GS.Tests.Tests
             {
                 data_consumo = DateTime.Now,
                 consumo = 3,
-                id_residencia = 1
+                id_residencia = 78
             };
 
             //Act
