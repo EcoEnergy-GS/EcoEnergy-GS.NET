@@ -2,6 +2,7 @@ using EcoEnergy_GS.Data;
 using EcoEnergy_GS.Services.Endereco;
 using EcoEnergy_GS.Services.HistoricoPontos;
 using EcoEnergy_GS.Services.Recompensas;
+using EcoEnergy_GS.Services.Residencia;
 using EcoEnergy_GS.Services.TipoEletrodomestico;
 using EcoEnergy_GS.Services.TrocasRecompensas;
 using EcoEnergy_GS.Services.Usuarios;
@@ -30,6 +31,7 @@ builder.Services.AddScoped<IRecompensasInterface, RecompensasService>();
 builder.Services.AddScoped<IEnderecoInterface, EnderecoService>();
 builder.Services.AddScoped<ITipoEletrodomesticoInterface, TipoEletrodomesticoService>();
 builder.Services.AddScoped<ITrocasRecompensasInterface, TrocasRecompensasService>();
+builder.Services.AddScoped<IResidenciaInterface, ResidenciaService>();
 
 var app = builder.Build();
 
