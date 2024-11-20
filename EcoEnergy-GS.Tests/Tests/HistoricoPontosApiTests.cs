@@ -144,22 +144,6 @@ namespace EcoEnergy_GS.Tests.Tests
             Assert.Equal(historico.data_historico, json.Dados.data_historico);
         }
 
-        //[Fact]
-        //public async Task CreateHistoricoPontos_ReturnNull_WhenNotEnoughtData()
-        //{
-        //    //Arrange
-        //    var historico = new HistoricoPontosModel
-        //    {
-        //        quantidade = 1
-        //    };
-
-        //    //Act
-        //    var response = await _client.PostAsJsonAsync("/api/HistoricoPontos/CreateHistorico", historico);
-
-        //    //Asserts
-        //    Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-        //}
-
         [Fact]
         public async Task EditHistoricoPontos_ReturnsNoContent_WhenHistoricoPontosExist()
         {
@@ -254,7 +238,7 @@ namespace EcoEnergy_GS.Tests.Tests
         }
 
         [Fact]
-        public async Task DeleteHistoricoPontos_ReturnsNoContent_WhenHistoricoPontosDoesntExist()
+        public async Task DeleteHistoricoPontos_ReturnsNoFound_WhenHistoricoPontosDoesntExist()
         {
             //Arrange
             var id_historico = 1234;
