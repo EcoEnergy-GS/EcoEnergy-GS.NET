@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace EcoEnergy_GS.Models
+namespace EcoEnergy_GS.DTO.Recompensas
 {
-    [Table("RECOMPENSAS")]
-    public class RecompensasModel
+    public class RecompensasEditDto
     {
         [Key]
         [Column("ID_RECOMPENSAS")]
@@ -17,9 +15,5 @@ namespace EcoEnergy_GS.Models
 
         [Column("PONTOS_NECESSARIOS")]
         public int pontos_necessarios { get; set; }
-
-        [JsonIgnore]
-        [InverseProperty("Recompensas")]
-        public ICollection<TrocasRecompensasModel> Trocas { get; set; }
     }
 }

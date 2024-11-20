@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace EcoEnergy_GS.Models
+namespace EcoEnergy_GS.DTO.TipoEletrodomestico
 {
-    [Table("TIPO_ELETRODOMESTICO")]
-    public class TipoEletrodomesticoModel
+    public class TipoEletrodomesticoEditDto
     {
         [Key]
         [Column("ID_ELETRODOMESTICO")]
@@ -19,9 +17,5 @@ namespace EcoEnergy_GS.Models
         [Required]
         [Column("QUANTIDADE")]
         public int quantidade { get; set; }
-
-        [JsonIgnore]
-        [InverseProperty("TipoEletrodomestico")]
-        public ICollection<ResidenciaModel> Residencia { get; set; }
     }
 }

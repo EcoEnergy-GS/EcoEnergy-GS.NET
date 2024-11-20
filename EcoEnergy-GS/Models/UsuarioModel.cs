@@ -27,7 +27,7 @@ namespace EcoEnergy_GS.Models
         [StringLength(20, MinimumLength = 8, ErrorMessage = "A senha deve ter entre 8 e 20 caracteres.")]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
             ErrorMessage = "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.")]
-        [JsonIgnore]
+        //[JsonIgnore]
         [Column("SENHA")]
         public string senha { get; set; }
 
@@ -38,12 +38,15 @@ namespace EcoEnergy_GS.Models
         [Column("PONTOS")]
         public int pontos { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<HistoricoPontosModel> HistoricoPontos { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<ResidenciaModel> Residencia { get; set; }
 
+        [JsonIgnore]
         [InverseProperty("Usuario")]
         public ICollection<TrocasRecompensasModel> Trocas { get; set; }
     }
