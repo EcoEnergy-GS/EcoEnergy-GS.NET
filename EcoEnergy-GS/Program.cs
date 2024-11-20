@@ -1,4 +1,5 @@
 using EcoEnergy_GS.Data;
+using EcoEnergy_GS.Services.Endereco;
 using EcoEnergy_GS.Services.HistoricoPontos;
 using EcoEnergy_GS.Services.Recompensas;
 using EcoEnergy_GS.Services.Usuarios;
@@ -24,6 +25,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUsuarioInterface, UsuarioService>();
 builder.Services.AddScoped<IHistoricoPontosInterface, HistoricoPontosService>();
 builder.Services.AddScoped<IRecompensasInterface, RecompensasService>();
+builder.Services.AddScoped<IEnderecoInterface, EnderecoService>();
 
 var app = builder.Build();
 
