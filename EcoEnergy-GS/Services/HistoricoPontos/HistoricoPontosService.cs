@@ -22,8 +22,6 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
             {
                 var historico = await _context.HistoricoPontos.Include(u => u.Usuario).ToListAsync();
 
-                //var historico = await _context.HistoricoPontos.ToListAsync();
-
                 resposta.Dados = historico;
                 resposta.Mensagem = "Todos históricos de pontos coletados!";
                 return resposta;
