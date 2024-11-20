@@ -1,4 +1,5 @@
 using EcoEnergy_GS.Data;
+using EcoEnergy_GS.Services.ConsumoEnergia;
 using EcoEnergy_GS.Services.Endereco;
 using EcoEnergy_GS.Services.HistoricoPontos;
 using EcoEnergy_GS.Services.Recompensas;
@@ -17,7 +18,7 @@ builder.Services.AddControllers();
 //Configurando a conexão com banco de dados
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")).EnableSensitiveDataLogging();
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,6 +33,7 @@ builder.Services.AddScoped<IEnderecoInterface, EnderecoService>();
 builder.Services.AddScoped<ITipoEletrodomesticoInterface, TipoEletrodomesticoService>();
 builder.Services.AddScoped<ITrocasRecompensasInterface, TrocasRecompensasService>();
 builder.Services.AddScoped<IResidenciaInterface, ResidenciaService>();
+builder.Services.AddScoped<IConsumoEnergiaInterface, ConsumoEnergiaService>();
 
 var app = builder.Build();
 
