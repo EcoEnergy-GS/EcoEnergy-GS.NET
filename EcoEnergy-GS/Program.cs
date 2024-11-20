@@ -3,6 +3,7 @@ using EcoEnergy_GS.Services.Endereco;
 using EcoEnergy_GS.Services.HistoricoPontos;
 using EcoEnergy_GS.Services.Recompensas;
 using EcoEnergy_GS.Services.TipoEletrodomestico;
+using EcoEnergy_GS.Services.TrocasRecompensas;
 using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IHistoricoPontosInterface, HistoricoPontosService>();
 builder.Services.AddScoped<IRecompensasInterface, RecompensasService>();
 builder.Services.AddScoped<IEnderecoInterface, EnderecoService>();
 builder.Services.AddScoped<ITipoEletrodomesticoInterface, TipoEletrodomesticoService>();
+builder.Services.AddScoped<ITrocasRecompensasInterface, TrocasRecompensasService>();
 
 var app = builder.Build();
 
