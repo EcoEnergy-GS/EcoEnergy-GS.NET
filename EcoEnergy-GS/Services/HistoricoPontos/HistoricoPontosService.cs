@@ -98,7 +98,7 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
             }
             catch (Exception ex)
             {
-                resposta.Mensagem = "Ocorreu um erro ao criar a campanha: " + ex.Message;
+                resposta.Mensagem = "Ocorreu um erro ao criar a Historico de pontos: " + ex.Message;
                 resposta.Status = false;
                 return resposta;
             }
