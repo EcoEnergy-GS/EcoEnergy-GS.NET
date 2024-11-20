@@ -318,33 +318,13 @@ namespace EcoEnergy_GS.Tests.Tests
             //Arrange
             int id_trocas = 1234;
 
-            var user = new UsuarioModel
-            {
-                nome = "Gabriel",
-                senha = "Gabriel123@",
-                telefone = "11123456789",
-                pontos = 12
-            };
-
-            _context.Usuarios.Add(user);
-            _context.SaveChanges();
-
-            var recompensas = new RecompensasModel
-            {
-                descricao = "Descrição de recompensas",
-                pontos_necessarios = 12
-            };
-
-            _context.Recompensas.Add(recompensas);
-            _context.SaveChanges();
-
             var EditedTrocasRecompensas = new TrocasRecompensasModel
             {
                 id_trocas = id_trocas,
                 data_troca = DateTime.Now,
                 pontos_utilizados = 300,
-                id_recompensas = recompensas.id_recompensas,
-                id_usuarios = user.id_usuarios
+                id_recompensas = 1,
+                id_usuarios = 1
             };
 
             //Act
