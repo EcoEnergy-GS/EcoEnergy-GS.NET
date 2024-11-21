@@ -26,7 +26,7 @@ namespace EcoEnergy_GS.Controllers
 
             var recommendation = GenerateEconomyRecommendation(request);
 
-            var points = CalculatePoints(recommendation);
+            var points = CalculatePoints(recommendation, request.ConsumoAtual);
 
             return Ok(new
             {
@@ -50,9 +50,10 @@ namespace EcoEnergy_GS.Controllers
             return (data.ConsumoAtual - prediction.ConsumoPrevisto) * 0.1f;
         }
 
-        private int CalculatePoints(float economy)
+        private int CalculatePoints(float economy, float totalConsumption)
         {
-            return (int)(economy * 10); 
+            float percentage = (economy / totalConsumption) * 100;
+            return (int)Math.Round(percentage * 10);
         }
     }
 
