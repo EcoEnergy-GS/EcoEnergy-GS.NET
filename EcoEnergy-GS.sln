@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoEnergy-GS", "EcoEnergy-G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoEnergy-GS.Tests", "EcoEnergy-GS.Tests\EcoEnergy-GS.Tests.csproj", "{853265F1-E812-4EC9-9926-A1642F9644F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoEnergy-GS.IA", "EcoEnergy-GS.IA\EcoEnergy-GS.IA.csproj", "{04543330-572C-42CB-B215-16F3BE3003FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{853265F1-E812-4EC9-9926-A1642F9644F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{853265F1-E812-4EC9-9926-A1642F9644F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{853265F1-E812-4EC9-9926-A1642F9644F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04543330-572C-42CB-B215-16F3BE3003FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04543330-572C-42CB-B215-16F3BE3003FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04543330-572C-42CB-B215-16F3BE3003FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04543330-572C-42CB-B215-16F3BE3003FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
