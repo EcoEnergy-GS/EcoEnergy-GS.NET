@@ -1,5 +1,4 @@
 ﻿using EcoEnergy_GS.DTO.TipoEletrodomestico;
-using EcoEnergy_GS.DTO.Usuarios;
 using EcoEnergy_GS.Models;
 
 namespace EcoEnergy_GS.Services.TipoEletrodomestico

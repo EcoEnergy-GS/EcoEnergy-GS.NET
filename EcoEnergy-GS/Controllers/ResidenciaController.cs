@@ -1,9 +1,6 @@
-﻿using EcoEnergy_GS.DTO.Recompensas;
-using EcoEnergy_GS.DTO.Residencia;
+﻿using EcoEnergy_GS.DTO.Residencia;
 using EcoEnergy_GS.Models;
-using EcoEnergy_GS.Services.Recompensas;
 using EcoEnergy_GS.Services.Residencia;
-using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoEnergy_GS.Controllers

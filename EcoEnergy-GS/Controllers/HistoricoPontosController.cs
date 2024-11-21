@@ -1,9 +1,6 @@
-﻿using EcoEnergy_GS.Data;
-using EcoEnergy_GS.DTO.HistoricoPontos;
-using EcoEnergy_GS.DTO.Usuarios;
+﻿using EcoEnergy_GS.DTO.HistoricoPontos;
 using EcoEnergy_GS.Models;
 using EcoEnergy_GS.Services.HistoricoPontos;
-using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoEnergy_GS.Controllers

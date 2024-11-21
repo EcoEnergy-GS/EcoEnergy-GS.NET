@@ -1,7 +1,5 @@
-﻿using EcoEnergy_GS.DTO.HistoricoPontos;
-using EcoEnergy_GS.DTO.TrocasRecompensas;
+﻿using EcoEnergy_GS.DTO.TrocasRecompensas;
 using EcoEnergy_GS.Models;
-using EcoEnergy_GS.Services.HistoricoPontos;
 using EcoEnergy_GS.Services.TrocasRecompensas;
 using Microsoft.AspNetCore.Mvc;
 

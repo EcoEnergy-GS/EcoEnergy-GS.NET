@@ -1,5 +1,4 @@
 ﻿using EcoEnergy_GS.DTO.ConsumoEnergia;
-using EcoEnergy_GS.DTO.HistoricoPontos;
 using EcoEnergy_GS.Models;
 
 namespace EcoEnergy_GS.Services.ConsumoEnergia

@@ -8,11 +8,9 @@ using EcoEnergy_GS.Services.Residencia;
 using EcoEnergy_GS.Services.TipoEletrodomestico;
 using EcoEnergy_GS.Services.TrocasRecompensas;
 using EcoEnergy_GS.Services.Usuarios;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.ML;
 using System.Text.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = WebApplication.CreateBuilder(args);
 

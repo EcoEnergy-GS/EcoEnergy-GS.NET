@@ -155,7 +155,7 @@ namespace EcoEnergy_GS.Services.TrocasRecompensas
                         trocasDb => trocasDb.id_trocas == trocasRecompensasEditDto.id_trocas
                     );
 
-                if ( trocas == null)
+                if (trocas == null)
                 {
                     resposta.Mensagem = "Nenhum registro de trocas recompensas encontrado!";
                     return resposta;
@@ -164,7 +164,7 @@ namespace EcoEnergy_GS.Services.TrocasRecompensas
                 var usuario = await _context.Usuarios
                     .FirstOrDefaultAsync(usuarioDb => usuarioDb.id_usuarios == trocasRecompensasEditDto.id_usuarios);
 
-                if ( usuario == null)
+                if (usuario == null)
                 {
                     resposta.Mensagem = "Nenhum registro de usuario encontrado!";
                     return resposta;
@@ -173,7 +173,7 @@ namespace EcoEnergy_GS.Services.TrocasRecompensas
                 var recompensas = await _context.Recompensas
                     .FirstOrDefaultAsync(recompensasDb => recompensasDb.id_recompensas == trocasRecompensasEditDto.id_recompensas);
 
-                if ( recompensas == null)
+                if (recompensas == null)
                 {
                     resposta.Mensagem = "Nenhum registro de recompensas encontrado!";
                     return resposta;

@@ -1,6 +1,5 @@
 ﻿using EcoEnergy_GS.Data;
 using EcoEnergy_GS.DTO.Residencia;
-using EcoEnergy_GS.DTO.TrocasRecompensas;
 using EcoEnergy_GS.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -80,7 +79,7 @@ namespace EcoEnergy_GS.Services.Residencia
                         r =>
                         r.Usuario.id_usuarios == residenciaCreateDto.id_usuarios &&
                         r.TipoEletrodomestico.id_eletrodomestico == residenciaCreateDto.id_eletrodomestico &&
-                        r.Endereco.id_endereco == residenciaCreateDto.id_endereco 
+                        r.Endereco.id_endereco == residenciaCreateDto.id_endereco
                     );
 
                 var usuario = await _context.Usuarios.FirstOrDefaultAsync(usuarioDb => usuarioDb.id_usuarios == residenciaCreateDto.id_usuarios);
@@ -195,7 +194,7 @@ namespace EcoEnergy_GS.Services.Residencia
                         enderecoDb => enderecoDb.id_endereco == residenciaEditDto.id_endereco
                     );
 
-                if( endereco == null)
+                if (endereco == null)
                 {
                     resposta.Mensagem = "Nenhum registro de endereco encontrado!";
                     return resposta;
@@ -206,7 +205,7 @@ namespace EcoEnergy_GS.Services.Residencia
                         tipoDb => tipoDb.id_eletrodomestico == residenciaEditDto.id_eletrodomestico
                     );
 
-                if(tipoEletrodomestico == null)
+                if (tipoEletrodomestico == null)
                 {
                     resposta.Mensagem = "Nenhum registro de tipo eletrodomestico encontrado!";
                     return resposta;

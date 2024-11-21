@@ -1,11 +1,7 @@
 ﻿using EcoEnergy_GS.Data;
 using EcoEnergy_GS.DTO.Endereco;
-using EcoEnergy_GS.DTO.Usuarios;
 using EcoEnergy_GS.Models;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Runtime.ConstrainedExecution;
-using System.Security.Cryptography;
 
 namespace EcoEnergy_GS.Services.Endereco
 {

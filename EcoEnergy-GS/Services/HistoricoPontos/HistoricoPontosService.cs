@@ -9,14 +9,14 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
     {
         public readonly AppDbContext _context;
 
-        public HistoricoPontosService (AppDbContext context)
+        public HistoricoPontosService(AppDbContext context)
         {
             _context = context;
         }
 
         public async Task<ResponseModel<List<HistoricoPontosModel>>> ListarHistorico()
         {
-            ResponseModel<List<HistoricoPontosModel>> resposta =  new ResponseModel<List<HistoricoPontosModel>> ();
+            ResponseModel<List<HistoricoPontosModel>> resposta = new ResponseModel<List<HistoricoPontosModel>>();
 
             try
             {
@@ -37,7 +37,7 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
 
         public async Task<ResponseModel<HistoricoPontosModel>> BucarHistoricoPorId(int id_historico)
         {
-            ResponseModel<HistoricoPontosModel> resposta = new ResponseModel<HistoricoPontosModel> ();
+            ResponseModel<HistoricoPontosModel> resposta = new ResponseModel<HistoricoPontosModel>();
 
             try
             {
@@ -69,7 +69,7 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
                 var historicoDb = await _context.HistoricoPontos
                     .Include(u => u.Usuario)
                     .FirstOrDefaultAsync(
-                        u => 
+                        u =>
                         u.Usuario.id_usuarios == historicoCreateDto.id_usuarios
                     );
 
@@ -143,7 +143,7 @@ namespace EcoEnergy_GS.Services.HistoricoPontos
                     .FirstOrDefaultAsync(
                         historicoDb => historicoDb.id_historico == historicoEditDto.id_historico
                     );
-                if(historico == null)
+                if (historico == null)
                 {
                     resposta.Mensagem = "Nenhum registro de histórico localizado!";
                     return resposta;

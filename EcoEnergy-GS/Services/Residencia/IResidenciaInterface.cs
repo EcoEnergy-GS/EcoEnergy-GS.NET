@@ -1,5 +1,4 @@
 ﻿using EcoEnergy_GS.DTO.Residencia;
-using EcoEnergy_GS.DTO.TrocasRecompensas;
 using EcoEnergy_GS.Models;
 
 namespace EcoEnergy_GS.Services.Residencia

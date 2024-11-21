@@ -1,6 +1,5 @@
 ﻿using EcoEnergy_GS.Data;
 using EcoEnergy_GS.DTO.TipoEletrodomestico;
-using EcoEnergy_GS.DTO.Usuarios;
 using EcoEnergy_GS.Models;
 using Microsoft.EntityFrameworkCore;
 

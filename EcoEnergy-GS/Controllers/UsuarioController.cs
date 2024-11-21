@@ -43,18 +43,18 @@ namespace EcoEnergy_GS.Controllers
         [HttpPut("EditUsuario/{id_user}")]
         public async Task<ActionResult<ResponseModel<UsuarioModel>>> EditUsuario(int id_user, [FromBody] UsuarioEditDto usuarioEditDto)
         {
-            if(id_user != usuarioEditDto.id_usuarios)
+            if (id_user != usuarioEditDto.id_usuarios)
             {
                 return BadRequest("Id na URL e no corpo não coincidem");
             }
 
-            var user =  await _usuarioInterface.EditUsuario(usuarioEditDto);
+            var user = await _usuarioInterface.EditUsuario(usuarioEditDto);
 
             if (user.Dados == null)
             {
                 return NotFound("Usuário não encontrado");
             }
-            
+
             return NoContent();
         }
 
@@ -72,3 +72,4 @@ namespace EcoEnergy_GS.Controllers
         }
     }
 }
+

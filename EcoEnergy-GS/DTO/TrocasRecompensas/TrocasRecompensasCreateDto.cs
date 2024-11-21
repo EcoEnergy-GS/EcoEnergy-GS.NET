@@ -1,5 +1,4 @@
-﻿using EcoEnergy_GS.Models;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcoEnergy_GS.DTO.TrocasRecompensas
 {

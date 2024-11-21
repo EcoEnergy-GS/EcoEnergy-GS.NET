@@ -1,8 +1,6 @@
 ﻿using EcoEnergy_GS.DTO.ConsumoEnergia;
-using EcoEnergy_GS.DTO.Recompensas;
 using EcoEnergy_GS.Models;
 using EcoEnergy_GS.Services.ConsumoEnergia;
-using EcoEnergy_GS.Services.Recompensas;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoEnergy_GS.Controllers

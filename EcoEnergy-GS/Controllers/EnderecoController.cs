@@ -1,8 +1,6 @@
 ﻿using EcoEnergy_GS.DTO.Endereco;
-using EcoEnergy_GS.DTO.Usuarios;
 using EcoEnergy_GS.Models;
 using EcoEnergy_GS.Services.Endereco;
-using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoEnergy_GS.Controllers
