@@ -24,9 +24,9 @@ namespace EcoEnergy_GS.Controllers
             if (request == null)
                 return BadRequest("Dados de consumo são necessários.");
 
-            var recommendation = GenerateEconomyRecommendation(request);
+            var (economy, recommendation) = GenerateEconomyRecommendation(request);
 
-            var points = CalculatePoints(recommendation, request.ConsumoAtual);
+            var points = CalculatePoints(economy, request.ConsumoAtual);
 
             return Ok(new
             {
@@ -41,19 +41,39 @@ namespace EcoEnergy_GS.Controllers
             return _mlContext.Model.Load(modelPath, out var modelInputSchema);
         }
 
-        private float GenerateEconomyRecommendation(EnergyConsumptionData data)
+        private (float economy, string recommendation) GenerateEconomyRecommendation(EnergyConsumptionData data)
         {
             var predictionEngine = _mlContext.Model.CreatePredictionEngine<EnergyConsumptionData, EnergyConsumptionPrediction>(_model);
 
             var prediction = predictionEngine.Predict(data);
 
-            return (data.ConsumoAtual - prediction.ConsumoPrevisto) * 0.1f;
+            // Calculando a economia de energia
+            var economy = data.ConsumoAtual - prediction.ConsumoPrevisto;
+
+            // Gerando uma recomendação textual baseada na economia
+            string recommendation;
+            if (economy > 0)
+            {
+                recommendation = "Você economizou energia! Continue assim para reduzir ainda mais o seu consumo.";
+            }
+            else if (economy < 0)
+            {
+                recommendation = "O consumo está acima do esperado. Tente reduzir o uso de energia para evitar desperdícios.";
+            }
+            else
+            {
+                recommendation = "Seu consumo está dentro do esperado. Mantenha o controle para evitar desperdícios.";
+            }
+
+            // Retornando tanto a economia (float) quanto a recomendação (string)
+            return (economy, recommendation);
         }
+
 
         private int CalculatePoints(float economy, float totalConsumption)
         {
             float percentage = (economy / totalConsumption) * 100;
-            return (int)Math.Round(percentage * 10);
+            return (int)Math.Round(percentage);
         }
     }
 
