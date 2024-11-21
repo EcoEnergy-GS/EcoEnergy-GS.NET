@@ -1,3 +1,4 @@
+using EcoEnergy_GS.Controllers;
 using EcoEnergy_GS.Data;
 using EcoEnergy_GS.Services.ConsumoEnergia;
 using EcoEnergy_GS.Services.Endereco;
@@ -9,6 +10,9 @@ using EcoEnergy_GS.Services.TrocasRecompensas;
 using EcoEnergy_GS.Services.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.ML;
+using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +38,26 @@ builder.Services.AddScoped<ITipoEletrodomesticoInterface, TipoEletrodomesticoSer
 builder.Services.AddScoped<ITrocasRecompensasInterface, TrocasRecompensasService>();
 builder.Services.AddScoped<IResidenciaInterface, ResidenciaService>();
 builder.Services.AddScoped<IConsumoEnergiaInterface, ConsumoEnergiaService>();
+
+//ML.NET
+var dataPath = @"C:\Users\Gabriel\Documents\GS\EcoEnergy-GS\EcoEnergy-GS.IA\Data\DataTrain.json";
+
+var jsonData = File.ReadAllText(dataPath);
+var energyData = JsonSerializer.Deserialize<List<EnergyConsumptionData>>(jsonData);
+
+var mlContext = new MLContext();
+
+var dataView = mlContext.Data.LoadFromEnumerable(energyData);
+
+var pipeline = mlContext.Transforms.Conversion
+                .MapValueToKey("HoraEncoded", nameof(EnergyConsumptionData.Hora))
+                .Append(mlContext.Transforms.Concatenate("Features", nameof(EnergyConsumptionData.Temperatura), nameof(EnergyConsumptionData.ConsumoAtual)))
+                .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: nameof(EnergyConsumptionData.ConsumoPrevisto), maximumNumberOfIterations: 100));
+
+var model = pipeline.Fit(dataView);
+
+var modelPath = "model.zip";
+mlContext.Model.Save(model, dataView.Schema, modelPath);
 
 var app = builder.Build();
 
