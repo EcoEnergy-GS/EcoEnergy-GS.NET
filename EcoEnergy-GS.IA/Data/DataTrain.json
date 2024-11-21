@@ -1,0 +1,98 @@
+[
+  {
+    "Hora": "2024-11-01T08:00:00",
+    "Temperatura": 22.5,
+    "ConsumoAtual": 500,
+    "ConsumoPrevisto": 450
+  },
+  {
+    "Hora": "2024-11-01T09:00:00",
+    "Temperatura": 23.0,
+    "ConsumoAtual": 600,
+    "ConsumoPrevisto": 570
+  },
+  {
+    "Hora": "2024-11-01T10:00:00",
+    "Temperatura": 25.0,
+    "ConsumoAtual": 700,
+    "ConsumoPrevisto": 680
+  },
+  {
+    "Hora": "2024-11-01T11:00:00",
+    "Temperatura": 26.5,
+    "ConsumoAtual": 800,
+    "ConsumoPrevisto": 750
+  },
+  {
+    "Hora": "2024-11-01T12:00:00",
+    "Temperatura": 28.0,
+    "ConsumoAtual": 900,
+    "ConsumoPrevisto": 850
+  },
+  {
+    "Hora": "2024-11-01T13:00:00",
+    "Temperatura": 29.5,
+    "ConsumoAtual": 1000,
+    "ConsumoPrevisto": 950
+  },
+  {
+    "Hora": "2024-11-01T14:00:00",
+    "Temperatura": 30.0,
+    "ConsumoAtual": 1100,
+    "ConsumoPrevisto": 1050
+  },
+  {
+    "Hora": "2024-11-01T15:00:00",
+    "Temperatura": 31.0,
+    "ConsumoAtual": 1200,
+    "ConsumoPrevisto": 1150
+  },
+  {
+    "Hora": "2024-11-01T16:00:00",
+    "Temperatura": 32.0,
+    "ConsumoAtual": 1300,
+    "ConsumoPrevisto": 1250
+  },
+  {
+    "Hora": "2024-11-01T17:00:00",
+    "Temperatura": 33.0,
+    "ConsumoAtual": 1400,
+    "ConsumoPrevisto": 1350
+  },
+  {
+    "Hora": "2024-11-01T18:00:00",
+    "Temperatura": 34.5,
+    "ConsumoAtual": 1500,
+    "ConsumoPrevisto": 1450
+  },
+  {
+    "Hora": "2024-11-01T19:00:00",
+    "Temperatura": 35.0,
+    "ConsumoAtual": 1600,
+    "ConsumoPrevisto": 1550
+  },
+  {
+    "Hora": "2024-11-01T20:00:00",
+    "Temperatura": 34.0,
+    "ConsumoAtual": 1550,
+    "ConsumoPrevisto": 1500
+  },
+  {
+    "Hora": "2024-11-01T21:00:00",
+    "Temperatura": 32.5,
+    "ConsumoAtual": 1400,
+    "ConsumoPrevisto": 1350
+  },
+  {
+    "Hora": "2024-11-01T22:00:00",
+    "Temperatura": 30.5,
+    "ConsumoAtual": 1200,
+    "ConsumoPrevisto": 1150
+  },
+  {
+    "Hora": "2024-11-01T23:00:00",
+    "Temperatura": 28.5,
+    "ConsumoAtual": 1100,
+    "ConsumoPrevisto": 1050
+  }
+]
