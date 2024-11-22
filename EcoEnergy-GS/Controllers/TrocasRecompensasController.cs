@@ -17,6 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarTrocasRecompensas")]
+        [EndpointDescription("Lista o tipo de eletrodomestico")]
         public async Task<ActionResult<ResponseModel<List<TrocasRecompensasModel>>>> ListarTrocasRecompensas()
         {
             var trocas = await _trocasRecompensasInterface.ListarTrocasRecompensas();
@@ -24,6 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarTrocasRecompensasPorId/{id_trocas}")]
+        [EndpointDescription("Lista a troca de recompensa de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<TrocasRecompensasModel>>> BucarTrocasRecompensasPorId(int id_trocas)
         {
             var trocas = await _trocasRecompensasInterface.BucarTrocasRecompensasPorId(id_trocas);
@@ -31,6 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateTrocasRecompensas")]
+        [EndpointDescription("Cria uma troca de recompensa")]
         public async Task<ActionResult<ResponseModel<TrocasRecompensasModel>>> CreateTrocasRecompensas(TrocasRecompensasCreateDto trocasRecompensasCreateDto)
         {
             var trocas = await _trocasRecompensasInterface.CreateTrocasRecompensas(trocasRecompensasCreateDto);
@@ -38,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditTrocasRecompensas/{id_trocas}")]
+        [EndpointDescription("Edita uma troca de recompensa de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<TrocasRecompensasModel>>> EditTrocasRecompensas(int id_trocas, [FromBody] TrocasRecompensasEditDto trocasRecompensasEditDto)
         {
             if (id_trocas != trocasRecompensasEditDto.id_trocas)
@@ -56,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteTrocasRecompensas/{id_trocas}")]
+        [EndpointDescription("Delete uma troca de recompensa de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<TrocasRecompensasModel>>> DeleteTrocasRecompensas(int id_trocas)
         {
             var trocaRecompensa = await _trocasRecompensasInterface.DeleteTrocasRecompensas(id_trocas);

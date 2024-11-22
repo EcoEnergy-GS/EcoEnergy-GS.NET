@@ -2,6 +2,7 @@
 using EcoEnergy_GS.Models;
 using EcoEnergy_GS.Services.ConsumoEnergia;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace EcoEnergy_GS.Controllers
 {
@@ -17,6 +18,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarConsumoEnergia")]
+        [EndpointDescription("Lista o consumo de energia")]
         public async Task<ActionResult<ResponseModel<List<ConsumoEnergiaModel>>>> ListarConsumoEnergia()
         {
             var consumo = await _consumoEnergiaInterface.ListarConsumoEnergia();
@@ -24,6 +26,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarConsumoEnergiaPorId/{id_consumo}")]
+        [EndpointDescription("Lista o consumo de energia de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<List<ConsumoEnergiaModel>>>> BucarConsumoEnergiaPorId(int id_consumo)
         {
             var consumo = await _consumoEnergiaInterface.BucarConsumoEnergiaPorId(id_consumo);
@@ -31,6 +34,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateConsumoEnergia")]
+        [EndpointDescription("Cria um novo consumo de energia")]
         public async Task<ActionResult<ResponseModel<ConsumoEnergiaModel>>> CreateConsumoEnergia(ConsumoEnergiaCreateDto consumoEnergiaCreateDto)
         {
             var consumo = await _consumoEnergiaInterface.CreateConsumoEnergia(consumoEnergiaCreateDto);
@@ -38,6 +42,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditConsumoEnergia/{id_consumo}")]
+        [EndpointDescription("Edita um consumo de energia de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<ConsumoEnergiaModel>>> EditConsumoEnergia(int id_consumo, [FromBody] ConsumoEnergiaEditDto consumoEnergiaEditDto)
         {
             if (id_consumo != consumoEnergiaEditDto.id_consumo)
@@ -56,6 +61,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteConsumoEnergia/{id_consumo}")]
+        [EndpointDescription("Delete um consumo de energia de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<ConsumoEnergiaModel>>> DeleteConsumoEnergia(int id_consumo)
         {
             var consumo = await _consumoEnergiaInterface.DeleteConsumoEnergia(id_consumo);

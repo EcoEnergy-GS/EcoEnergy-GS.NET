@@ -17,6 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarResidencia")]
+        [EndpointDescription("Lista a residencia")]
         public async Task<ActionResult<ResponseModel<List<ResidenciaModel>>>> ListarResidencia()
         {
             var residencia = await _residenciaInterface.ListarResidencia();
@@ -24,6 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarResidenciaPorId/{id_residencia}")]
+        [EndpointDescription("Lista a residencia de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<List<ResidenciaModel>>>> BucarResidenciaPorId(int id_residencia)
         {
             var residencia = await _residenciaInterface.BucarResidenciaPorId(id_residencia);
@@ -31,6 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateResidencia")]
+        [EndpointDescription("Cria uma residencia")]
         public async Task<ActionResult<ResponseModel<ResidenciaModel>>> CreateResidencia(ResidenciaCreateDto residenciaCreateDto)
         {
             var residencia = await _residenciaInterface.CreateResidencia(residenciaCreateDto);
@@ -38,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditResidencia/{id_residencia}")]
+        [EndpointDescription("Edita uma residencia de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<ResidenciaModel>>> EditResidencia(int id_residencia, [FromBody] ResidenciaEditDto residenciaEditDto)
         {
             if (id_residencia != residenciaEditDto.id_residencia)
@@ -56,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteResidencia/{id_residencia}")]
+        [EndpointDescription("Delete uma residencia de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<ResidenciaModel>>> DeleteResidencia(int id_residencia)
         {
             var residencia = await _residenciaInterface.DeleteResidencia(id_residencia);
