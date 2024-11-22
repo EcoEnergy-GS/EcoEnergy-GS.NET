@@ -38,7 +38,7 @@ builder.Services.AddScoped<IResidenciaInterface, ResidenciaService>();
 builder.Services.AddScoped<IConsumoEnergiaInterface, ConsumoEnergiaService>();
 
 //ML.NET
-var dataPath = @"C:\Users\Gabriel\Documents\GS\EcoEnergy-GS\EcoEnergy-GS.IA\Data\DataTrain.json";
+var dataPath = @"C:\Users\Gabriel\Source\Repos\EcoEnergy-GS.NET\EcoEnergy-GS.IA\Data\DataTrain.json";
 
 var jsonData = File.ReadAllText(dataPath);
 var energyData = JsonSerializer.Deserialize<List<EnergyConsumptionData>>(jsonData);

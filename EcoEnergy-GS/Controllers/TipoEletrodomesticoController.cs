@@ -17,6 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarTipoEletrodomestico")]
+        [EndpointDescription("Lista o tipo de eletrodomestico")]
         public async Task<ActionResult<ResponseModel<List<TipoEletrodomesticoModel>>>> ListarTipoEletrodomestico()
         {
             var tipoEletrodomestico = await _tipoEletrodomesticoInterface.ListarTipoEletrodomestico();
@@ -24,6 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarTipoEletrodomesticoPorId/{id_eletrodomestico}")]
+        [EndpointDescription("Lista o tipo de eletrodomestico de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<List<TipoEletrodomesticoModel>>>> BucarTipoEletrodomesticoPorId(int id_eletrodomestico)
         {
             var tipoEletrodomestico = await _tipoEletrodomesticoInterface.BucarTipoEletrodomesticoPorId(id_eletrodomestico);
@@ -31,6 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateTipoEletrodomestico")]
+        [EndpointDescription("Cria um tipo de eletrodomestico")]
         public async Task<ActionResult<ResponseModel<TipoEletrodomesticoModel>>> CreateTipoEletrodomestico(TipoEletrodomesticoCreateDto tipoEletrodomesticoCreateDto)
         {
             var tipoEletrodomestico = await _tipoEletrodomesticoInterface.CreateTipoEletrodomestico(tipoEletrodomesticoCreateDto);
@@ -38,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditTipoEletrodomestico/{id_eletrodomestico}")]
+        [EndpointDescription("Edita um tipo de eletrodomestico de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<TipoEletrodomesticoModel>>> EditTipoEletrodomestico(int id_eletrodomestico, [FromBody] TipoEletrodomesticoEditDto tipoEletrodomesticoEditDto)
         {
             if (id_eletrodomestico != tipoEletrodomesticoEditDto.id_eletrodomestico)
@@ -56,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteTipoEletrodomestico/{id_eletrodomestico}")]
+        [EndpointDescription("Delete um tipo de eletrodomestico de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<TipoEletrodomesticoModel>>> DeleteTipoEletrodomestico(int id_eletrodomestico)
         {
             var tipoEletrodomestico = await _tipoEletrodomesticoInterface.DeleteTipoEletrodomestico(id_eletrodomestico);

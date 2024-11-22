@@ -17,7 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarUsuarios")]
-        [EndpointDescription("Endpoint responsável por listar todos os usuários cadastrados.")]
+        [EndpointDescription("Lista o usuário")]
         public async Task<ActionResult<ResponseModel<List<UsuarioModel>>>> ListarUsuarios()
         {
             var usuarios = await _usuarioInterface.ListarUsuarios();
@@ -25,7 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarUsuarioPorId/{id_usuario}")]
-        [EndpointDescription("Endpoint responsável por buscar usuário de acordo com seu id.")]
+        [EndpointDescription("Lista buscar usuário de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<List<UsuarioModel>>>> BucarUsuarioPorId(int id_usuario)
         {
             var usuario = await _usuarioInterface.BucarUsuarioPorId(id_usuario);
@@ -33,7 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateUsuario")]
-        [EndpointDescription("Endpoint responsável por criar um usuário novo.")]
+        [EndpointDescription("Criar um usuário")]
         public async Task<ActionResult<ResponseModel<UsuarioModel>>> CreateUsuario(UsuarioCreateDto usuarioCreateDto)
         {
             var usuario = await _usuarioInterface.CreateUsuario(usuarioCreateDto);
@@ -41,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditUsuario/{id_user}")]
+        [EndpointDescription("Edita um usuário de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<UsuarioModel>>> EditUsuario(int id_user, [FromBody] UsuarioEditDto usuarioEditDto)
         {
             if (id_user != usuarioEditDto.id_usuarios)
@@ -59,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteUsuario/{id_user}")]
+        [EndpointDescription("Delete um usuário de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<UsuarioModel>>> DeleteUsuario(int id_user)
         {
             var user = await _usuarioInterface.DeleteUsuario(id_user);

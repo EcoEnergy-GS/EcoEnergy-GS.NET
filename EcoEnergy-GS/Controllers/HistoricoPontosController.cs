@@ -17,6 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarHistorico")]
+        [EndpointDescription("Lista o historico de pontos")]
         public async Task<ActionResult<ResponseModel<List<HistoricoPontosModel>>>> ListarHistorico()
         {
             var historicos = await _historicoPontosInterface.ListarHistorico();
@@ -24,6 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarHistoricoPorId/{id_historico}")]
+        [EndpointDescription("Lista o historico de pontos de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<HistoricoPontosModel>>> BucarHistoricoPorId(int id_historico)
         {
             var historico = await _historicoPontosInterface.BucarHistoricoPorId(id_historico);
@@ -31,6 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateHistorico")]
+        [EndpointDescription("Cria um historico de pontos")]
         public async Task<ActionResult<ResponseModel<HistoricoPontosModel>>> CreateHistorico(HistoricoPontosCreateDto historicoPontosCreateDto)
         {
             var historico = await _historicoPontosInterface.CreateHistorico(historicoPontosCreateDto);
@@ -38,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditHistorico/{id_historico}")]
+        [EndpointDescription("Edita um historico de pontos de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<HistoricoPontosModel>>> EditHistorico(int id_historico, [FromBody] HistoricoPontosEditDto historicoPontosEditDto)
         {
             if (id_historico != historicoPontosEditDto.id_historico)
@@ -56,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteHistorico/{id_historico}")]
+        [EndpointDescription("Delete um historico de pontos de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<HistoricoPontosModel>>> DeleteHistorico(int id_historico)
         {
             var historico = await _historicoPontosInterface.DeleteHistorico(id_historico);
