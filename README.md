@@ -128,6 +128,16 @@ Este sistema é altamente escalável e pode ser implementado em diversos context
 # Testes xUnit
 Os testes deste projeto foram desenvolvidos para garantir a funcionalidade e a estabilidade da API. Eles cobrem as operações essenciais de cada endpoint.
 
+## Banco de dados
+### Detalhe na migration
+A migration configurada no projeto inclui procedimentos armazenados (stored procedures) e gatilhos (triggers) para garantir a integridade e o fluxo de dados. Especificamente:
+
+- Procedures: Foram criados procedimentos para adicionar dados às tabelas. Cada procedimento insere 10 linhas em suas respectivas tabelas, facilitando a alimentação inicial do banco de dados.
+
+- Triggers: A migração também configura gatilhos para garantir o correto gerenciamento dos pontos do usuário. A trigger verifica se o usuário possui pontos suficientes para resgatar uma recompensa. Após o resgate, o gatilho é acionado para atualizar os pontos do usuário, refletindo a quantidade restante após a utilização.
+
+Essa abordagem permite uma gestão eficiente e automatizada dos dados no sistema, mantendo a integridade e o controle necessário para as interações dos usuários.
+
 ## Estrutura do Banco de Dados
 
 ### **1. ConsumoEnergia**
