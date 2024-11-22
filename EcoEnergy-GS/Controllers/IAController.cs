@@ -18,6 +18,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("generate-recommendation")]
+        [EndpointDescription("Gera uma recomendação par ao cliente de acordo com os dados fornecidos.")]
         public IActionResult GenerateRecommendation([FromBody] EnergyConsumptionData request)
         {
             if (request == null)

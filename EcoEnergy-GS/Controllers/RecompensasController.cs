@@ -17,6 +17,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("ListarRecompensas")]
+        [EndpointDescription("Lista as recompensas")]
         public async Task<ActionResult<ResponseModel<List<RecompensasModel>>>> ListarRecompensas()
         {
             var recompensas = await _recompensasInterface.ListarRecompensas();
@@ -24,6 +25,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpGet("BucarRecompensasPorId/{id_recompensas}")]
+        [EndpointDescription("Lista as recompensas de acordo com o ID.")]
         public async Task<ActionResult<ResponseModel<List<RecompensasModel>>>> BucarRecompensasPorId(int id_recompensas)
         {
             var recompensas = await _recompensasInterface.BucarRecompensasPorId(id_recompensas);
@@ -31,6 +33,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPost("CreateRecompensas")]
+        [EndpointDescription("Cria uma recompensa")]
         public async Task<ActionResult<ResponseModel<RecompensasModel>>> CreateRecompensas(RecompensasCreateDto recompensasCreateDto)
         {
             var recompensas = await _recompensasInterface.CreateRecompensas(recompensasCreateDto);
@@ -38,6 +41,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpPut("EditRecompensas/{id_recompensas}")]
+        [EndpointDescription("Edita uma recompensa de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<RecompensasModel>>> EditRecompensas(int id_recompensas, [FromBody] RecompensasEditDto recompensasEditDto)
         {
             if (id_recompensas != recompensasEditDto.id_recompensas)
@@ -56,6 +60,7 @@ namespace EcoEnergy_GS.Controllers
         }
 
         [HttpDelete("DeleteRecompensas/{id_recompensas}")]
+        [EndpointDescription("Delete uma recompensa de acordo com o ID")]
         public async Task<ActionResult<ResponseModel<RecompensasModel>>> DeleteRecompensas(int id_recompensas)
         {
             var recompensas = await _recompensasInterface.DeleteRecompensas(id_recompensas);
